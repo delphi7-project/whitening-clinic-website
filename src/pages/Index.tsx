@@ -86,9 +86,12 @@ const Index = () => {
                 <p className="text-sm text-gray-500">Стоматологическая клиника</p>
               </div>
             </div>
-            <Button className="bg-primary hover:bg-primary/90">
+            <Button className="bg-primary hover:bg-primary/90 hidden sm:flex">
               <Icon name="Phone" size={16} className="mr-2" />
               +7 (495) 123-45-67
+            </Button>
+            <Button size="sm" className="bg-primary hover:bg-primary/90 sm:hidden">
+              <Icon name="Phone" size={16} />
             </Button>
           </div>
         </div>
@@ -99,11 +102,11 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Ваша улыбка —<br />
                 <span className="text-primary">наша забота</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
                 Современная стоматология с человечным подходом. Безболезненное лечение, 
                 европейские стандарты качества и 15 лет опыта создания красивых улыбок.
               </p>
@@ -117,7 +120,7 @@ const Index = () => {
                   Виртуальный тур
                 </Button>
               </div>
-              <div className="flex items-center gap-6 mt-8">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mt-8">
                 <div className="flex items-center gap-2">
                   <Icon name="Shield" size={20} className="text-secondary" />
                   <span className="text-sm text-gray-600">Гарантия качества</span>
@@ -134,7 +137,7 @@ const Index = () => {
             </div>
             <div className="animate-scale-in">
               <div className="bg-white p-8 rounded-2xl shadow-xl">
-                <h3 className="text-2xl font-semibold mb-6 text-center">Безболезненное лечение</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">Безболезненное лечение</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center">
@@ -146,7 +149,7 @@ const Index = () => {
                     <div className="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center">
                       <Icon name="Check" size={16} className="text-secondary" />
                     </div>
-                    <span className="text-gray-700">Седация для тревожных пациентов</span>
+                    <span className="text-gray-700 text-sm sm:text-base">Седация для тревожных пациентов</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center">
@@ -165,8 +168,8 @@ const Index = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">О клинике Белоснежка</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">О клинике Белоснежка</h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               15 лет мы помогаем нашим пациентам обрести здоровые и красивые зубы. 
               Современное оборудование, квалифицированные врачи и индивидуальный подход — 
               вот секрет нашего успеха.
@@ -220,11 +223,11 @@ const Index = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Услуги и цены</h2>
-            <p className="text-xl text-gray-600">Прозрачное ценообразование без скрытых платежей</p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Услуги и цены</h2>
+            <p className="text-lg sm:text-xl text-gray-600 px-4">Прозрачное ценообразование без скрытых платежей</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
             {services.map((service) => (
               <Card 
                 key={service.id} 
@@ -236,7 +239,7 @@ const Index = () => {
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-lg">{service.name}</CardTitle>
-                    <Badge variant="secondary" className="text-lg font-semibold">
+                    <Badge variant="secondary" className="text-sm sm:text-lg font-semibold whitespace-nowrap">
                       {service.price.toLocaleString()} ₽
                     </Badge>
                   </div>
@@ -278,8 +281,8 @@ const Index = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Наша команда</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Наша команда</h2>
+            <p className="text-lg sm:text-xl text-gray-600 px-4">
               Опытные врачи с международными сертификатами
             </p>
           </div>
@@ -290,8 +293,8 @@ const Index = () => {
                   <div className="w-24 h-24 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <Icon name="User" size={40} className="text-primary" />
                   </div>
-                  <CardTitle className="text-xl">{doctor.name}</CardTitle>
-                  <CardDescription className="text-primary font-medium">
+                  <CardTitle className="text-lg sm:text-xl leading-tight">{doctor.name}</CardTitle>
+                  <CardDescription className="text-primary font-medium text-sm sm:text-base">
                     {doctor.specialty}
                   </CardDescription>
                 </CardHeader>
@@ -324,12 +327,12 @@ const Index = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Современное оборудование</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Современное оборудование</h2>
+            <p className="text-lg sm:text-xl text-gray-600 px-4">
               Инновационные технологии для точной диагностики и качественного лечения
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             <Card className="text-center">
               <CardHeader>
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -390,10 +393,10 @@ const Index = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Отзывы пациентов</h2>
-            <p className="text-xl text-gray-600">Что говорят о нас наши пациенты</p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Отзывы пациентов</h2>
+            <p className="text-lg sm:text-xl text-gray-600 px-4">Что говорят о нас наши пациенты</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
             {reviews.map((review, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
@@ -411,7 +414,7 @@ const Index = () => {
                   <Badge variant="outline">{review.procedure}</Badge>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 font-accent text-lg leading-relaxed">
+                  <p className="text-gray-600 font-accent text-sm sm:text-lg leading-relaxed">
                     "{review.text}"
                   </p>
                 </CardContent>
@@ -425,8 +428,8 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-r from-primary to-secondary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-6">Записаться на прием</h2>
-            <p className="text-xl text-white/90">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6">Записаться на прием</h2>
+            <p className="text-lg sm:text-xl text-white/90 px-4">
               Заполните форму, и мы свяжемся с вами в течение 30 минут
             </p>
           </div>
@@ -494,8 +497,8 @@ const Index = () => {
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Частые вопросы</h2>
-            <p className="text-xl text-gray-600">Ответы на самые популярные вопросы</p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Частые вопросы</h2>
+            <p className="text-lg sm:text-xl text-gray-600 px-4">Ответы на самые популярные вопросы</p>
           </div>
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
@@ -535,10 +538,10 @@ const Index = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Контакты</h2>
-            <p className="text-xl text-gray-600">Приходите к нам на бесплатную консультацию</p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Контакты</h2>
+            <p className="text-lg sm:text-xl text-gray-600 px-4">Приходите к нам на бесплатную консультацию</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <Card className="text-center">
               <CardHeader>
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -580,7 +583,7 @@ const Index = () => {
                 <CardTitle>Телефон</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-2xl font-bold text-primary mb-2">
+                <p className="text-xl sm:text-2xl font-bold text-primary mb-2">
                   +7 (495) 123-45-67
                 </p>
                 <p className="text-gray-600 text-sm">
